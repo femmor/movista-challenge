@@ -17,18 +17,7 @@ const Search = () => {
 }
 
 const searchTextChange = (e) => {
-  const apiUrl = 'http://api.giphy.com/v1/gifs/search'
-  const api_key = '0s8YhD2rpCePplp27WvsmYEPqV1wYNE0'
-  const queryString = e.target.value
-  const limit = 20
-  axios(`${apiUrl}`, {
-    params: {
-      api_key,
-      q: queryString,
-      limit
-    }
-  })
-  .then(res => console.log(res.data.data))
+  
 }
 
 export default Search
