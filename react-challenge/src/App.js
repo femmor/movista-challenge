@@ -2,8 +2,8 @@ import Search from "./components/Search"
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Movista Challenge</h1>
+    <div className="container search-container">
+      <h1 className="challenge-title">Movista Challenge</h1>
       <Search/>
     </div>
   );
