@@ -1,12 +1,13 @@
 import { call, put, takeLatest } from "redux-saga/effects"
 import types from "../types"
+import axios from 'axios'
 
 
 function* setSearch({ value }) {
   try {
     const apiUrl = 'http://api.giphy.com/v1/gifs/search'
     const api_key = '0s8YhD2rpCePplp27WvsmYEPqV1wYNE0'
-    const queryString = e.target.value
+    const queryString = value
     const limit = 20
     const result = yield axios(`${apiUrl}`, {
       params: {

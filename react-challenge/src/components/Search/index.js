@@ -1,7 +1,8 @@
 import React from 'react'
-import axios from 'axios'
+import {connect} from "react-redux"
+import { getSearchResults } from "./action"
 
-const Search = () => {
+const Search = props => {
   return (
     <>
       <div className="form-group">
@@ -9,15 +10,21 @@ const Search = () => {
           type="text" 
           placeholder="Search giphs..." 
           className="form-control"
-          onChange={searchTextChange}
+          onChange={(e) => searchTextChange(e, props)}
         />
       </div>
     </>
   )
 }
 
-const searchTextChange = (e) => {
-  
+const searchTextChange = (e, props) => {
+  if (e.target.value.trim() !== '') {
+    props.getSearchResults(e.target.value)
+  }
 }
 
-export default Search
+const mapDispatchToProps = {
+  getSearchResults
+}
+
+export default connect(null, mapDispatchToProps)(Search)
