@@ -1,6 +1,7 @@
 import { call, put, takeLatest } from "redux-saga/effects"
 import types from "../types"
 import axios from 'axios'
+import { setSearchResults } from "../action"
 
 
 function* setSearch({ value }) {
@@ -16,7 +17,7 @@ function* setSearch({ value }) {
         limit
       }
     })
-    console.log(result.data.data)
+    return yield put(setSearchResults(result.data.data))
   } catch (error) {
     console.log(error)
   }

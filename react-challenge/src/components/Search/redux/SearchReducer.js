@@ -9,7 +9,7 @@ const SearchReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.addSearchResult:
       return state.merge({
-        searchResults: action.payload
+        searchResults: fromJS(action.payload)
       })
     default:
       return state;
