@@ -5,7 +5,7 @@ export const getSearchResults = value => ({
   value
 })
 
-export const setSearchResults = results => ({
+export const setSearchResults = payload => ({
   type: types.setSearchResult,
-  results
+  payload
 })

@@ -1,13 +1,27 @@
 import React from 'react'
 import {connect} from "react-redux"
+import Result from './Result'
 
-const SearchResults = props => {
-  console.log(props)
-  return (
-    <div>
-      Search Results
-    </div>
-  )
+const SearchResults = ({ searchResults }) => {
+  if (searchResults) {
+    return (
+      <div className="row display-panel">
+          {renderSearchResults(searchResults)}
+      </div>
+    )
+  } 
+  return null
+}
+
+const renderSearchResults = searchResults => {
+
+  return searchResults.map((result, i) => {
+    return (
+        <>
+          {result && <Result result={result.toJS()} index={i} key={result.toJS().id}/>}
+        </>
+    )
+  })
 }
 
 const mapStateToProps = state => {
