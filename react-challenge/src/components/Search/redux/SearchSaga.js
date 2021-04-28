@@ -3,7 +3,6 @@ import types from "../types"
 import axios from 'axios'
 import { setSearchResults } from "../action"
 
-
 function* setSearch({ value }) {
   try {
     const apiUrl = 'http://api.giphy.com/v1/gifs/search'

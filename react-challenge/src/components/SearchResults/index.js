@@ -14,7 +14,6 @@ const SearchResults = ({ searchResults }) => {
 }
 
 const renderSearchResults = searchResults => {
-
   return searchResults.map((result, i) => {
     return (
         <>
